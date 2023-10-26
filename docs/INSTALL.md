@@ -30,7 +30,7 @@ git commit -m "FIRST COMMIT: laravel install"
 
 ## DEPENDENCIAS
 
-### [Getting Started with TALL stack](https://devdojo.com/thinkverse/getting-started-with-tall-stack)
+### LIVEWIRE [Getting Started with TALL stack](https://devdojo.com/thinkverse/getting-started-with-tall-stack)
 
 ```bash
 composer require laravel/jetstream
@@ -64,4 +64,66 @@ export default defineConfig({
 ```bash
 git add .
 git commit -m "DEPENDENCIAS: livewire install"
+```
+
+### TAILWIND [Getting Started with TALL stack](https://devdojo.com/thinkverse/getting-started-with-tall-stack)
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+### Editar o arquivo [tailwind.config.js] conforme abaixo
+
+```js
+import defaultTheme from 'tailwindcss/defaultTheme';
+import forms from '@tailwindcss/forms';
+import typography from '@tailwindcss/typography';
+
+/** @type {import('tailwindcss').Config} */
+export default {
+    content: [
+        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        './vendor/laravel/jetstream/**/*.blade.php',
+        './storage/framework/views/*.php',
+        './resources/views/**/*.blade.php',
+        './resources/views/**/*.js',
+    ],
+
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+            },
+        },
+    },
+
+    plugins: [forms, typography],
+};
+```
+
+### Editar o arquivo [resources/css/app.css] conforme abaixo
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+```
+
+### Editar o arquivo [resources/views/layout/app.blade.php] conforme abaixo, incluindo no final do arquivo
+
+```php
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+```
+
+```bash
+npm run dev
+npm run build
+
+git add .
+git commit -m "DEPENDENCIAS: tailwind install"
 ```
