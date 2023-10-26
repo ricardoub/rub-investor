@@ -39,7 +39,7 @@ php artisan migrate
 composer require livewire/livewire
 ```
 
-### Editar o arquivo [vite.config.js] conforme abaixo
+#### Editar o arquivo [vite.config.js] conforme abaixo
 
 ```js
 import { defineConfig } from 'vite';
@@ -73,7 +73,7 @@ npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
 
-### Editar o arquivo [tailwind.config.js] conforme abaixo
+#### Editar o arquivo [tailwind.config.js] conforme abaixo
 
 ```js
 import defaultTheme from 'tailwindcss/defaultTheme';
@@ -102,7 +102,7 @@ export default {
 };
 ```
 
-### Editar o arquivo [resources/css/app.css] conforme abaixo
+#### Editar o arquivo [resources/css/app.css] conforme abaixo
 
 ```css
 @tailwind base;
@@ -114,7 +114,7 @@ export default {
 }
 ```
 
-### Editar o arquivo [resources/views/layout/app.blade.php] conforme abaixo, incluindo no final do arquivo
+#### Editar o arquivo [resources/views/layout/app.blade.php] conforme abaixo, incluindo no final do arquivo
 
 ```php
 @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -126,4 +126,26 @@ npm run build
 
 git add .
 git commit -m "DEPENDENCIAS: tailwind install"
+```
+
+### ALPINE [Getting Started with TALL stack](https://devdojo.com/thinkverse/getting-started-with-tall-stack)
+
+```bash
+npm install alpinejs
+```
+
+#### Editar o arquivo [resources/js/app.js] e acrescentar as linhas abaixo ao final do arquivo
+
+```javascript
+import Alpine from 'alpinejs'
+Alpine.start()
+window.Alpine = Alpine
+```
+
+```bash
+npm run dev
+npm run build
+
+git add .
+git commit -m "DEPENDENCIAS: alpine install"
 ```
